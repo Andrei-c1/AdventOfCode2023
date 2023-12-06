@@ -33,24 +33,17 @@ public class Day3Part2 {
             }
         }
         if(twoNumbers.size()== 2){
-            System.out.println("wlf");
             calculateSum(twoNumbers);
         }
     }
 
     private int retriveNumber(List<String> input, int x, int y) {
-        while(y<input.size() && Character.isDigit(input.get(x).charAt(y)) ){
+        while(y<input.size() - 1  && Character.isDigit(input.get(x).charAt(y+1)) ){
             y++;
-        }
-        if(y==input.size()){
-            y--;
-        }
-        if(!Character.isDigit(input.get(x).charAt(y))){
-            y--;
         }
         int num = 0;
         int p =0;
-        //System.out.println(input.get(x).charAt(y-1));
+
         while(y>=0 & Character.isDigit(input.get(x).charAt(y))){
             int currentDigit = input.get(x).charAt(y) - '0';
             num = (int) (num  + currentDigit * Math.pow(10, p));

@@ -26,15 +26,10 @@ public class Day3Part1 {
     }
 
     private void retriveNumber(List<String> input, int x, int y) {
-        while(y<input.size() && Character.isDigit(input.get(x).charAt(y)) ){
+        while(y<input.size() - 1 && Character.isDigit(input.get(x).charAt(y+1)) ){
             y++;
         }
-        if(y==input.size()){
-            y--;
-        }
-        if(!Character.isDigit(input.get(x).charAt(y))){
-            y--;
-        }
+
         int num = 0;
         int p =0;
         //System.out.println(input.get(x).charAt(y-1));
@@ -58,7 +53,6 @@ public class Day3Part1 {
         input.set(x,modifiedLine.toString());
     }
 
-
     public void findSpecial(List<String> input){
         int currentLine=0;
         for(String line:input){
@@ -71,9 +65,6 @@ public class Day3Part1 {
             currentLine++;
         }
     }
-
-
-
 
     public void result(){
         List<String> input = InputReader.readInputByLine("inputs/inDay3.txt");
