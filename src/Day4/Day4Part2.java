@@ -25,7 +25,6 @@ public class Day4Part2 {
                 count++;
             }
         }
-
         return count;
     }
 
