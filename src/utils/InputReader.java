@@ -18,4 +18,13 @@ public class InputReader {
             throw new RuntimeException(e);
         }
     }
+
+    public static String readInputAsString(String pathStr){
+        try {
+            Path path = Paths.get(pathStr);
+            return Files.readString(path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
