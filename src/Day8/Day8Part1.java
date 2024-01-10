@@ -43,10 +43,7 @@ public class Day8Part1 {
 
 
         }
-
         System.out.println(count);
-
-
     }
 
     private void dataSetUp(List<String> input) {
